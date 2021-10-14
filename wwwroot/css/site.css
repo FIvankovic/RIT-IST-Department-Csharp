@@ -1,0 +1,448 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/*
+* --- NAVBAR -------------------------------------------------------------
+*/
+.navbar {
+    z-index: 999;
+    border-bottom: 1px solid #e27021 !important;
+    background-color: rgba(0,0,0,1);
+    color: white;
+    transition: all 0.5s;
+}
+.nav-link {
+    color: white;
+}
+.navbar-brand {
+    color: white;
+}
+.nav-link:hover {
+    color: lightgrey;
+}
+.navbar-brand:hover {
+    color: lightgray;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+#nav-logo {
+    width: 55px;
+    height: auto;
+    margin-right: 30px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    border-top: 1px solid #e27021;
+    color: white;
+}
+.footer-link {
+    color: white;
+}
+.footer-link:hover {
+    text-decoration: none;
+    color: lightgray;
+}
+
+/*
+* --- HEADER/ABOUT -------------------------------------------------------------
+*/
+#header-section {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../media/Header_Wallpaper.jpg');
+    background-color: red;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid black;
+    background-position: center top;
+    background-attachment: fixed;
+    padding-top: 70px;
+    padding-bottom: 140px;
+}
+#header-h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    color: white;
+    text-shadow: 1px 3px 3px rgb(0, 0, 0);
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+#header-title {
+    text-decoration: underline;
+    margin-bottom: 40px;
+    color: black;
+}
+#header-hr1 {
+    margin-bottom: 50px;
+    width: 600px;
+    text-align: center;
+}
+#header-textBox {
+    text-align: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+    margin-bottom: 150px;
+    padding: 32px;
+    color: #444;
+}
+#header-quote {
+    position: relative;
+    margin-top: 50px;
+    font-style: italic;
+    color: #444;
+}
+#header-quoteAuthor {
+    font-size: 10px;
+    color: #444
+}
+
+
+/*
+* --- UNDERGRADUATE -------------------------------------------------------------
+*/
+#undergraduate-section {
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    border-top: 5px solid #59C173;
+    border-bottom: 5px solid #a17fe0;
+    background-image: linear-gradient(#59C173, #a17fe0), linear-gradient(#59C173, #a17fe0);
+    background-size: 5px 100%;
+    background-position: 0 0, 100%, 0;
+    background-repeat: no-repeat;
+}
+
+#undergraduate-section .btn {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#undergraduate-header {
+    text-align: center;
+    padding: 50px;
+    font-family: geo-sans-light;
+    color: #4e4654;
+}
+#undergraduate-header-container {
+    margin-bottom: 50px;
+}
+.degreeTitles {
+    font-size: 30px;
+    color: #4e4654;
+}
+
+.undergraduate-text {
+    font-family: Montserrat,sans-serif;
+    color: #4e4654;
+}
+
+.undergraduate-icons {
+    height: auto;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.concentrationsList {
+    list-style-type: none !important;
+    margin-bottom: 30px;
+}
+
+.degree-header {
+    font-family: Garamond, serif;
+    margin-bottom: 20px;
+}
+
+.degree-header-wmc {
+    border-bottom: 1px solid #09ad66;
+    color: #09ad66;
+}
+
+.degree-header-hcc {
+    border-bottom: 1px solid #c2b313;
+    color: #c2b313;
+}
+
+.degree-header-cit {
+    border-bottom: 1px solid #003cff;
+    color: #003cff;
+}
+
+.degree-btn {
+    border-radius: 50% !important;
+    padding: 12px !important;
+    font-family: 'Trebuchet MS', sans-serif !important;
+}
+
+
+/*
+* --- GRADUATE -------------------------------------------------------------
+*/
+#graduate-section {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../media/Graduate_Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid black;
+    background-position: center top;
+    background-attachment: fixed;
+    color: white;
+    padding-bottom: 100px;
+}
+#graduate-header {
+    padding: 100px;
+    font-family: geo-sans-light;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+}
+#graduate-header-container {
+    margin-bottom: 30px;
+}
+.degree-header-ist {
+    border-bottom: 1px solid #7303fc;
+    color: #7303fc;
+}
+.degree-header-hci {
+    border-bottom: 1px solid #00d9a3;
+    color: #00d9a3;
+}
+.degree-header-nsa {
+    border-bottom: 1px solid #d91d00;
+    color: #d91d00;
+}
+.graduate-text {
+    font-family: Montserrat,sans-serif;
+    color: white;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+}
+.graduateTitles {
+    font-size: 30px;
+    color: white;
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+}
+
+.certificate-icons {
+    height: auto;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.certificate-header {
+    font-family: Montserrat,sans-serif;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align:center;
+}
+
+.certificate-a {
+    color: #ebebeb;
+}
+
+    .certificate-a:hover {
+        color: #4fffe2;
+    }
+
+/*
+* --- FACULTY -------------------------------------------------------------
+*/
+#faculty-section {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('../media/People_Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.faculty-header-container {
+    margin-bottom: 50px;
+}
+.faculty-header {
+    color: white;
+}
+#facultyList {
+    list-style-type: none;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr)) !important;
+    column-gap: 15px;
+    grid-row-gap: 15px;
+}
+.facultyDiv {
+    background-color: white;
+}
+.faculty-img {
+    height: auto;
+    width: 120px;
+}
+.facultyImg-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.faculty-text {
+    text-align: center;
+}
+.faculty-contact {
+    text-decoration: underline;
+}
+.card {
+    transition: all 0.3s;
+    transition-timing-function: linear;
+}
+.card:hover {
+    -webkit-box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #FF0000, 5px 5px 15px 5px rgba(255,255,255,0);
+    box-shadow: 0px 20px 0px -10px #FFFFFF, 0px -20px 0px -10px #FFFFFF, 20px 0px 0px -10px #FFFFFF, -20px 0px 0px -10px #FFFFFF, 0px 0px 0px 10px #FF0000, 5px 5px 15px 5px rgba(255,255,255,0);
+}
+
+/*
+* --- NEWS -------------------------------------------------------------
+*/
+#news-section {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../media/News_Wallpaper.jpg');
+    background-color: red;
+    background-position: center;
+}
+.newsDate {
+    font-family: geo-sans-light,sans-serif;
+    text-decoration: underline;
+}
+
+#news:hover {
+    cursor: pointer;
+}
+
+.newsHeader {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: Montserrat,sans-serif;
+}
+
+.newsText {
+    margin-bottom: 40px;
+    font-family: geo-sans-light,sans-serif;
+}
+.news-container {
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-bottom: 100px;
+}
+.newsHr {
+    margin-bottom: 60px;
+    width: 50%;
+}
+/*
+* --- GENERAL -------------------------------------------------------------
+*/
+.justify-content {
+    text-align: justify;
+}
+.text-align-center {
+    text-align: center;
+}
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+.bold {
+    font-weight: bold;
+}
+
+.margin-top-50px {
+    margin-top: 50px;
+}
+
+/*
+    TABLES
+*/
+.hidden {
+    display: none;
+}
+.table-margin {
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.datatable {
+    border: 1px solid black;
+}
+.table-header {
+    margin-bottom: 30px;
+}
+
+#privacy-section {
+    margin-top:50px;
+}

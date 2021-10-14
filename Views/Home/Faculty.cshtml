@@ -1,0 +1,52 @@
+﻿@model FacultyViewModel
+  
+    <section id="faculty-section">
+        <div class="text-center faculty-header-container">
+            <h1 class="display-4 faculty-header">Faculty</h1>
+        </div>
+        <ul id="facultyList">
+            @foreach (var faculty in Model.Faculty)
+            {
+                <li class="card" id="@faculty.username">
+                    <div class="facultyImg-container">
+                        <img class="img-fluid faculty-img" src='@faculty.imagePath'>
+                    </div>
+                    <div class="faculty-text">
+                        <h5>@faculty.name</h5>
+                        <p class="peopleName">@faculty.title</p>
+                        @if (!string.IsNullOrEmpty(@faculty.tagline))
+                        {
+                            <p>@faculty.tagline</p>
+                        }
+                        <hr />
+                        <p>Area of Interest: <span class="text-uppercase">@faculty.interestArea</span></p>
+                        @if (!string.IsNullOrEmpty(@faculty.office)) { 
+                            <p>Office: @faculty.office</p>
+                        }
+                        <hr />
+                        <p class="faculty-contact">Contact</p>
+                        @if (!string.IsNullOrEmpty(@faculty.phone))
+                        {
+                            <p>Phone: @faculty.phone</p>
+                        }
+                        @if (!string.IsNullOrEmpty(@faculty.email))
+                        {
+                            <p>E-mail: @faculty.email</p>
+                        }
+                        @if (!string.IsNullOrEmpty(@faculty.website))
+                        {
+                            <p>Website: <a href="@faculty.website">@faculty.website</a></p>
+                        }
+                        @if (!string.IsNullOrEmpty(@faculty.twitter))
+                        {
+                            <p>Twitter: @faculty.twitter</p>
+                        }
+                        @if (!string.IsNullOrEmpty(@faculty.facebook))
+                        {
+                            <p>Facebook: @faculty.facebook</p>
+                        }
+                    </div>
+                </li>
+            }
+        </ul>
+    </section>

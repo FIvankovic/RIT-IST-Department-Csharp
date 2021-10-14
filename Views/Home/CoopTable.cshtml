@@ -1,0 +1,35 @@
+﻿@model CoopTableViewModel
+    <section class="table-margin">
+        <h1 class="text-center table-header">@Model.coopTable.title</h1>
+        <table id="coopTable" class="display hidden datatable">
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>Employer</th>
+                    <th>Location</th>
+                    <th>Term</th>
+                </tr>
+            </thead>
+            <tbody id="coopTableBody">
+                @foreach (var coop in Model.coopTable.coopInformation)
+                {
+                    <tr>
+                        <td>@coop.degree</td>
+                        <td>@coop.employer</td>
+                        <td>@coop.city</td>
+                        <td>@coop.term</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+    <script>
+        /***
+         * Once window and data is loaded -> activate the DataTable plugin
+        */
+        $(window).on('load', function () {
+            $('#coopTable').DataTable();
+            $('#coopTable').removeClass('hidden');
+        });
+
+    </script>

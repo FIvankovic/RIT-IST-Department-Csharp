@@ -1,0 +1,37 @@
+﻿@model EmploymentTableViewModel
+<section class="table-margin">
+    <h1 class="text-center table-header">@Model.employmentTable.title</h1>
+    <table id="employmentTable" class="display hidden datatable">
+        <thead>
+            <tr>
+                <th>Degree</th>
+                <th>Employer</th>
+                <th>Location</th>
+                <th>Title</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="coopTableBody">
+            @foreach (var item in Model.employmentTable.professionalEmploymentInformation)
+            {
+                <tr>
+                    <td>@item.degree</td>
+                    <td>@item.employer</td>
+                    <td>@item.city</td>
+                    <td>@item.title</td>
+                    <td>@item.startDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+    <script>
+        /***
+         * Once window and data is loaded -> activate the DataTable plugin
+        */
+        $(window).on('load', function () {
+            $('#employmentTable').DataTable();
+            $('#employmentTable').removeClass('hidden');
+        });
+
+    </script>

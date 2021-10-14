@@ -1,0 +1,15 @@
+﻿@model NewsViewModel
+
+<section id="news-section">
+    @foreach (var article in Model.Older)
+    {
+    <article class="news-container">
+        <h2 class="newsHeader">@article.title.</h2>
+        <hr class="newsHr">
+        <p><small class="newsDate">Date: @article.date </small></p>
+        <p class="newsText">@article.description</p>
+    </article>
+
+    }
+</section>
+

@@ -1,0 +1,245 @@
+﻿@model DegreesViewModel
+
+<section id="undergraduate-section">
+    <div id="undergraduate-header-container" class="text-center">
+        <h1 id="undegraduate-header text-center">Undergraduate Degrees</h1>
+    </div>
+    <div class="row text-center undergraduate-text">
+        <div class="col-sm">
+            <img class="undergraduate-icons" src="../media/Computing_&_Information_Icon.png" alt="Computer Icon">
+            <h2 class="degreeTitles">@Model.undergraduate[0].title</h2>
+            <p>@Model.undergraduate[0].description</p>
+            <button id="underGrad-wmc-btn" type="button" class="btn btn-dark degree-btn">Learn more</button>
+        </div>
+        <div class="col-sm">
+            <img class="undergraduate-icons" src="../media/Human_centered_Computing_Icon.webp" alt="Human Computing Icon">
+            <h2 class="degreeTitles">@Model.undergraduate[1].title</h2>
+            <p>@Model.undergraduate[1].description</p>
+            <button id="underGrad-hcc-btn" type="button" class="btn btn-dark degree-btn">Learn more</button>
+        </div>
+        <div class="col-sm">
+            <img class="undergraduate-icons" src="../media/Web_Mobile_Icon.png" alt="Computer & Mobile Icon">
+            <h2 class="degreeTitles">@Model.undergraduate[2].title</h2>
+            <p>@Model.undergraduate[2].description</p>
+            <button id="underGrad-cit-btn" type="button" class="btn btn-dark degree-btn">Learn more</button>
+        </div>
+    </div>
+</section>
+
+<section id="graduate-section">
+    <div id="graduate-header-container" class="text-center">
+        <h1 id="graduate-header">Graduate Degrees</h1>
+    </div>
+    <div class="row">
+        <div class="row text-align-center graduate-text">
+            <div class="col-sm">
+                <img class="undergraduate-icons" src="../media/IST_Icon.png" alt="IST Icon">
+                <h2 class="graduateTitles display-4 faculty-header">@Model.graduate[0].title</h2>
+                <p>@Model.graduate[0].description</p>
+                <button id="grad-ist-btn" type="button" class="btn btn-dark degree-btn">Learn more</button>
+            </div>
+            <div class="col-sm">
+                <img class="undergraduate-icons" src="../media/HCI_Icon.png" alt="HCI Icon">
+                <h2 class="graduateTitles">@Model.graduate[1].title</h2>
+                <p>@Model.graduate[1].description</p>
+                <button id="grad-hci-btn" type="button" class="btn btn-dark degree-btn">Learn more</button>
+            </div>
+            <div class="col-sm">
+                <img class="undergraduate-icons" src="../media/Network_Icon.png" alt="Network Icon">
+                <h2 class="graduateTitles">@Model.graduate[2].title</h2>
+                <p>@Model.graduate[2].description</p>
+                <button id="grad-nsa-btn" type="button" class="btn btn-dark degree-btn">Learn more</button>
+            </div>
+        </div>
+    </div>
+        <div class="text-center">
+            <div class="col-lg">
+                <h3 class="capitalize certificate-header">@Model.graduate[3].availableCertificates[1]</h3>
+                <img class="img-fluid certificate-icons" src="../media/HTML5.webp" alt="HTML5 Icon">
+                <p><a class="certificate-a" href="https://www.rit.edu/study/networking-planning-and-design-adv-cert">@Model.graduate[3].availableCertificates[0]</a></p>
+                <img class="img-fluid certificate-icons" src="../media/Network.png" alt="Network Icon">
+                <p><a class="certificate-a" href="https://www.rit.edu/study/web-development-adv-cert">@Model.graduate[3].availableCertificates[1]</a></p>
+            </div>
+        </div>
+</section>
+
+
+
+    <script>
+        //Execute once window and data is loaded
+        $(window).on('load', function () {
+            //UNDERGRADUATE
+            //Undergraduate WMC Button functionality - creates a new dialog window when pressed
+            $('#underGrad-wmc-btn').on('click', function () {
+                $('<div></div>').dialog({
+                    modal: true,
+                    title: `@Model.undergraduate[0].title`,
+                    width: 600,
+                    hide: 'explode',
+                    height: 400,
+                    open: function () {
+                        //Create the jQuery object which will hold the extracted data
+                        let $dialogBoxContent = $(`
+                            <h2 class="degree-header degree-header-wmc text-align-center">Concentrations</h2>
+                            <ul class="concentrationsList justify-content">
+                                <li><i class="fas fas fa-laptop-code"></i> @Model.undergraduate[0].concentrations[0]</li>
+                                <li><i class="fas fas fa-mobile-alt"></i> @Model.undergraduate[0].concentrations[1]</li>
+                                <li><i class="fas fas fa-sitemap"></i> @Model.undergraduate[0].concentrations[2]</li>
+                                <li><i class="fas fas fa-globe"></i> @Model.undergraduate[0].concentrations[3]</li>
+                            </ul>
+                            <small>
+                                <p>To learn more, visit our website:</p>
+                                <p><a href="http://wmc.rit.edu">http://wmc.rit.edu</a></p>
+                            </small>
+                        `);
+                        //Append the data for he WMC undergraduate degree into its own dialog window
+                        $(this).append($dialogBoxContent);
+                    }
+                });//dialog box end
+            });//underGrad-wmc-btn functionality end
+
+            //Undergraduate HCC Button functionality - creates a new dialog window when pressed
+            $('#underGrad-hcc-btn').on('click', function () {
+                $('<div></div>').dialog({
+                    modal: true,
+                    title: `@Model.undergraduate[1].title`,
+                    width: 600,
+                    hide: 'explode',
+                    height: 400,
+                    open: function () {
+                        let $dialogBoxContent = $(`
+                            <h2 class="degree-header degree-header-hcc text-align-center">Concentrations</h2>
+                            <ul class="concentrationsList justify-content">
+                                <li><i class="fas fas fa-universal-access"></i> @Model.undergraduate[1].concentrations[0]</li>
+                                <li><i class="fas fas fa-paint-brush"></i> @Model.undergraduate[1].concentrations[1]</li>
+                                <li><i class="fas fas fa-window-restore"></i> @Model.undergraduate[1].concentrations[2]</li>
+                                <li><i class="fas fas fa-brain"></i> @Model.undergraduate[1].concentrations[3]</li>
+                                <li><i class="fas fas fa-chalkboard-teacher"></i> @Model.undergraduate[1].concentrations[4]</li>
+                                <li><i class="fas fas fa-language"></i> @Model.undergraduate[1].concentrations[5]</li>
+                            </ul>
+                            <small>
+                                <p>To learn more, visit our website:</p>
+                                <p><a href="http://hcc.rit.edu">http://hcc.rit.edu</a></p>
+                            </small>
+                        `);
+                        //Append the data for he HCC undergraduate degree into its own dialog window
+                        $(this).append($dialogBoxContent);
+                    }
+                });//dialog box end
+            });//underGrad-hcc-btn functionality end
+
+            //Undergraduate CIT Button functionality - creates a new dialog window when pressed
+            $('#underGrad-cit-btn').on('click', function () {
+                $('<div></div>').dialog({
+                    modal: true,
+                    title: `@Model.undergraduate[2].title`,
+                    width: 600,
+                    hide: 'explode',
+                    height: 400,
+                    open: function () {
+                        let $dialogBoxContent = $(`
+                            <h2 class="degree-header degree-header-cit text-align-center">Concentrations</h2>
+                            <ul class="concentrationsList justify-content">
+                                <li><i class="fas fas fa-universal-access"></i> @Model.undergraduate[2].concentrations[0]</li>
+                                <li><i class="fas fas fa-paint-brush"></i> @Model.undergraduate[2].concentrations[1]</li>
+                                <li><i class="fas fas fa-window-restore"></i> @Model.undergraduate[2].concentrations[2]</li>
+                                <li><i class="fas fas fa-brain"></i> @Model.undergraduate[2].concentrations[3]</li>
+                                <li><i class="fas fas fa-chalkboard-teacher"></i> @Model.undergraduate[2].concentrations[4]</li>
+                            </ul>
+                            <small>
+                                <p>To learn more, visit our website:</p>
+                                <p><a href="http://cit.rit.edu">http://cit.rit.edu</a></p>
+                            </small>
+                        `);
+                        //Append the data for he CIT uconcentrationsoncentrationsnModelconcentrationsergraduate degree into its own dialog window
+                        $(this).append($dialogBoxContent);
+                    }
+                });//dialog box end
+            });//underGrad-cit-btn functionality end
+
+            //GRADUATE DIALOGS
+            //Graduate IST Button functionality - when clicked, it will open the .dialog window
+            $('#grad-ist-btn').on('click', function () {
+                $('<div></div>').dialog({
+                    modal: true,
+                    title: `@Model.graduate[0].title`,
+                    width: 600,
+                    hide: 'explode',
+                    height: 400,
+                    open: function () {
+                        let $dialogBoxContent = $(`
+                            <h2 class="degree-header degree-header-ist text-align-center">Concentrations</h2>
+                            <ul class="concentrationsList justify-content">
+                                <li><i class="fas fas fa-database"></i> @Model.graduate[0].concentrations[0]</li>
+                                <li><i class="fas fas fa-network-wired"></i> @Model.graduate[0].concentrations[0]</li>
+                                <li><i class="fas fas fa-code-branch"></i> @Model.graduate[0].concentrations[0]</li>
+                            </ul>
+                            <small>
+                                <p>To learn more, visit our website:</p>
+                                <p><a href=" http://it.rit.edu"> http://it.rit.edu</a></p>
+                            </small>
+                        `);
+                        //Append the $dialogBoxContent jQuery object intot the .dialog window
+                        $(this).append($dialogBoxContent);
+                    }
+                });//dialog box end
+            });//grad-ist-btn functionality end
+
+            //Graduate HCI Button functionality - when clicked, it will open the .dialog window
+            $('#grad-hci-btn').on('click', function () {
+                $('<div></div>').dialog({
+                    modal: true,
+                    title: `@Model.graduate[1].title`,
+                    width: 600,
+                    hide: 'explode',
+                    height: 400,
+                    open: function () {
+                        let $dialogBoxContent = $(`
+                            <h2 class="degree-header degree-header-hci text-align-center">Concentrations</h2>
+                            <ul class="concentrationsList justify-content">
+                                <li><i class="fas fas fa-wifi"></i> @Model.graduate[1].concentrations[0]</li>
+                                <li><i class="fas fas fa-globe"></i> @Model.graduate[1].concentrations[1]</li>
+                                <li><i class="fas fas fa-clinic-medical"></i> @Model.graduate[1].concentrations[2]</li>
+                                <li><i class="fas fas fa-chalkboard"></i> @Model.graduate[1].concentrations[3]</li>
+                                <li><i class="fas fas fa-memory"></i> @Model.graduate[1].concentrations[4]</li>
+                                <li><i class="fas fas fa-user-shield"></i> @Model.graduate[1].concentrations[5]</li>
+                            </ul>
+                            <small>
+                                <p>To learn more, visit our website:</p>
+                                <p><a href="http://hci.rit.edu">http://hci.rit.edu</a></p>
+                            </small>
+                        `);
+                        //Append the $dialogBoxContent jQuery object intot the .dialog window
+                        $(this).append($dialogBoxContent);
+                    }
+                });//dialog box end
+            });//underGrad-hcc-btn functionality end
+
+            //Graduate nsa Button functionality - when clicked, it will open the .dialog window
+            $('#grad-nsa-btn').on('click', function () {
+                $('<div></div>').dialog({
+                    modal: true,
+                    title: `@Model.graduate[2].title`,
+                    width: 600,
+                    hide: 'explode',
+                    height: 400,
+                    open: function () {
+                        let $dialogBoxContent = $(`
+                            <h2 class="degree-header degree-header-nsa text-align-center">Concentrations</h2>
+                            <ul class="concentrationsList justify-content">
+                                <li><i class="fas fas fa-search"></i> @Model.graduate[2].concentrations[0]</li>
+                                <li><i class="fas fas fa-user-tie"></i> @Model.graduate[2].concentrations[1]</li>
+                                <li><i class="fas fas fa-tasks"></i> @Model.graduate[2].concentrations[2]</li>
+                            </ul>
+                            <small>
+                                <p>To learn more, visit our website:</p>
+                                <p><a href="http://nsa.rit.edu"> http://nsa.rit.edu</a></p>
+                            </small>
+                        `);
+                        //Append the $dialogBoxContent jQuery object intot the .dialog window
+                        $(this).append($dialogBoxContent);
+                    }//open end
+                });//dialog box end
+            });//grad-nsa-btn functionality end
+        });
+    </script>
